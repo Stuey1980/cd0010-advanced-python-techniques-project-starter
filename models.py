@@ -20,6 +20,7 @@ You'll edit this file in Task 1.
 from helpers import cd_to_datetime, datetime_to_str
 
 
+# noinspection SpellCheckingInspection
 class NearEarthObject:
     """A near-Earth object (NEO).
 
@@ -44,16 +45,16 @@ class NearEarthObject:
         # You should coerce these values to their appropriate data type and
         # handle any edge cases, such as a empty name being represented by `None`
         # and a missing diameter being represented by `float('nan')`.
-        
+
         # Set the designation to the pdes provided in **info
         self.designation = info["pdes"]
-        
+
         # Get name or set to None
         self.name = info["name"]
-        
+
         # Get diameter or set to float('nan')
         self.diameter = (float(info["diameter"]))
-        
+
         # Set hazardous or not
         self.hazardous = info["pha"]
 
