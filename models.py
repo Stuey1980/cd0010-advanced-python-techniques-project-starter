@@ -12,7 +12,7 @@ A `NearEarthObject` maintains a collection of its close approaches, and a
 `CloseApproach` maintains a reference to its NEO.
 
 The functions that construct these objects use information extracted from the
-data files from NASA, so these objects should be able to handle all of the
+data files from NASA, so these objects should be able to handle all the
 quirks of the data set, such as missing names and unknown diameters.
 
 You'll edit this file in Task 1.
@@ -43,7 +43,7 @@ class NearEarthObject:
         # Assign information from the arguments passed to the constructor
         # onto attributes named `designation`, `name`, `diameter`, and `hazardous`.
         # You should coerce these values to their appropriate data type and
-        # handle any edge cases, such as a empty name being represented by `None`
+        # handle any edge cases, such as an empty name being represented by `None`
         # and a missing diameter being represented by `float('nan')`.
 
         # Set the designation to the pdes provided in **info
@@ -92,7 +92,7 @@ class CloseApproach:
     """A close approach to Earth by an NEO.
 
     A `CloseApproach` encapsulates information about the NEO's close approach to
-    Earth, such as the date and time (in UTC) of closest approach, the nominal
+    Earth, such as the date and time (in UTC) of the closest approach, the nominal
     approach distance in astronomical units, and the relative approach velocity
     in kilometers per second.
 
@@ -143,8 +143,8 @@ class CloseApproach:
         # Use this object's attributes to return a human-readable string representation.
         # The project instructions include one possibility. Peek at the __repr__
         # method for examples of advanced string formatting.
-        return (f"At {self.time_str}, '{self.neo:.2f}' approaches Earth at a distance of {self.distance:.2f} "
-                f"au and a velocity of {self.velocity:.2f}km/s")
+        return (f"At {self.time_str}, '{self.neo}' approaches Earth at a distance of {self.distance} "
+                f"au and a velocity of {self.velocity}km/s")
 
     def __repr__(self):
         """Return `repr(self)`, a computer-readable string representation of this object."""
