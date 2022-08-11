@@ -111,14 +111,13 @@ class CloseApproach:
         # onto attributes named `_designation`, `time`, `distance`, and `velocity`.
         # You should coerce these values to their appropriate data type and handle any edge cases.
         # The `cd_to_datetime` function will be useful.
-        
-        self._designation = data[0][0]
-        self.time = cd_to_datetime(data[0][3])  # Use the cd_to_datetime function for this attribute.
-        self.distance = data[0][4]
-        self.velocity = data[0][7]
+
+        self.time = cd_to_datetime(info["cd"])  # Use the cd_to_datetime function for this attribute.
+        self.distance = info["dist"]
+        self.velocity = info["v_rel"]
 
         # Create an attribute for the referenced NEO, originally None.
-        self.neo = data[0][0]
+        self.neo = info["des"]
 
     @property
     def time_str(self):
