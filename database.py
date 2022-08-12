@@ -70,8 +70,12 @@ class NEODatabase:
         :param designation: The primary designation of the NEO to search for.
         :return: The `NearEarthObject` with the desired primary designation, or `None`.
         """
-        # TODO: Fetch an NEO by its primary designation.
-        return None
+        # Fetch an NEO by its primary designation.
+        for neo in self._neos:
+            if neo.designation == designation:
+                return neo
+            else:
+                return None
 
     def get_neo_by_name(self, name):
         """Find and return an NEO by its name.
@@ -88,7 +92,11 @@ class NEODatabase:
         :return: The `NearEarthObject` with the desired name, or `None`.
         """
         # TODO: Fetch an NEO by its name.
-        return None
+        for neo in self._neos:
+            if neo.name == name:
+                return neo
+            else:
+                return None
 
     def query(self, filters=()):
         """Query close approaches to generate those that match a collection of filters.
