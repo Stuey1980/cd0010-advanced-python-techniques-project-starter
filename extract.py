@@ -53,8 +53,8 @@ def load_approaches(cad_json_path):
     approaches = []
 
     # Open json path for reading and store contents
-    with open(cad_json_path) as infile:
-        contents = json.load(infile)
+    with open(cad_json_path) as f:
+        contents = json.load(f)
 
     # Iterate through each list in data
     for content in contents["data"]:

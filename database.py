@@ -41,9 +41,19 @@ class NEODatabase:
         self._neos = neos
         self._approaches = approaches
 
-        # TODO: What additional auxiliary data structures will be useful?
+        # What additional auxiliary data structures will be useful?
+        # A dictionary to capture the neo and its approaches
+        self.database = []
 
-        # TODO: Link together the NEOs and their close approaches.
+        # Link together the NEOs and their close approaches.
+        # Iterate through each neo
+        for neo in self._neos:
+            # iterate through each close approach
+            for approach in self._approaches:
+                # If the pdes of the neo matches the des of the approach
+                if neo["pdes"] == approach["des"]:
+                    # Append the approach to the list of neo approaches
+
 
     def get_neo_by_designation(self, designation):
         """Find and return an NEO by its primary designation.
@@ -87,7 +97,7 @@ class NEODatabase:
         If no arguments are provided, generate all known close approaches.
 
         The `CloseApproach` objects are generated in internal order, which isn't
-        guaranteed to be sorted meaninfully, although is often sorted by time.
+        guaranteed to be sorted meaningfully, although is often sorted by time.
 
         :param filters: A collection of filters capturing user-specified criteria.
         :return: A stream of matching `CloseApproach` objects.
