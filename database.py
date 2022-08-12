@@ -12,6 +12,7 @@ data on NEOs and close approaches extracted by `extract.load_neos` and
 You'll edit this file in Tasks 2 and 3.
 """
 
+
 class NEODatabase:
     """A database of near-Earth objects and their close approaches.
 
@@ -50,10 +51,11 @@ class NEODatabase:
         for neo in self._neos:
             # iterate through each close approach
             for approach in self._approaches:
-                # If the pdes of the neo matches the des of the approach
-                if neo["pdes"] == approach["des"]:
+                # If the neo designation matches the designation of the approach
+                if neo.designation == approach.designation:
                     # Append the approach to the list of neo approaches
-
+                    neo.approaches.append(approach)
+                    approach.neo = neo
 
     def get_neo_by_designation(self, designation):
         """Find and return an NEO by its primary designation.

@@ -116,6 +116,7 @@ class CloseApproach:
         self.time = cd_to_datetime(info["cd"])  # Use the cd_to_datetime function for this attribute.
         self.distance = info["dist"]
         self.velocity = info["v_rel"]
+        self.designation = info["des"]
 
         # Create an attribute for the referenced NEO, originally None.
         self.neo = None
@@ -143,10 +144,10 @@ class CloseApproach:
         # Use this object's attributes to return a human-readable string representation.
         # The project instructions include one possibility. Peek at the __repr__
         # method for examples of advanced string formatting.
-        return (f"At {self.time_str}, '{self.neo}' approaches Earth at a distance of {self.distance:.2f} "
+        return (f"At {self.time_str}, '{self.designation}' approaches Earth at a distance of {self.distance:.2f} "
                 f"au and a velocity of {self.velocity:.2f}km/s")
 
     def __repr__(self):
         """Return `repr(self)`, a computer-readable string representation of this object."""
         return (f"CloseApproach(time={self.time_str!r}, distance={self.distance:.2f}, "
-                f"velocity={self.velocity:.2f}, neo={self.neo!r})")
+                f"velocity={self.velocity:.2f}, neo={self.designation!r})")
