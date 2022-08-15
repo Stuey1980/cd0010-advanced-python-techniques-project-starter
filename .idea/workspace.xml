@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12356679-ba8d-42d9-a885-473d6632d4af" name="Changes" comment="Self.neo is a string. Cant be formatted with :.2f. Should be able to use str after later steps">
+    <list default="true" id="12356679-ba8d-42d9-a885-473d6632d4af" name="Changes" comment="2 errors on provided tests. diameter not converted to string and error setting up the class??">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660248481332</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2 errors on provided tests. diameter not converted to string and error setting up the class??">
+      <created>1660589596423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660589596423</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,6 +85,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Still not getting str to work in CloseApproach class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still not getting str to work in CloseApproach class" />
+    <MESSAGE value="2 errors on provided tests. diameter not converted to string and error setting up the class??" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 errors on provided tests. diameter not converted to string and error setting up the class??" />
   </component>
 </project>

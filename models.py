@@ -50,13 +50,22 @@ class NearEarthObject:
         self.designation = info["pdes"]
 
         # Get name or set to None
-        self.name = info["name"]
+        try:
+            if len(info["name"]) > 0:
+                self.name = info["name"]
+            else:
+                self.name = None
+        except ValueError:  # WHAT ERROR TO CAPTURE EMPTY STRING????????
+            self.name = None
 
         # Get diameter or set to float('nan')
-        self.diameter = (float(info["diameter"]))
+        try:
+            self.diameter = (float(info["diameter"]))
+        except ValueError:
+            self.diameter = float('nan')
 
         # Set hazardous or not
-        self.hazardous = info["pha"]
+        self.hazardous = bool(info["pha"])
 
         # Create an empty initial collection of linked approaches.
         self.approaches = []
