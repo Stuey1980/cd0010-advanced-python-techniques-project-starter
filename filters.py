@@ -82,7 +82,7 @@ def create_filters(date=None, start_date=None, end_date=None,
     Each of these arguments is provided by the main module with a value from the
     user's options at the command line. Each one corresponds to a different type
     of filter. For example, the `--date` option corresponds to the `date`
-    argument, and represents a filter that selects close approaches that occured
+    argument, and represents a filter that selects close approaches that occurred
     on exactly that given date. Similarly, the `--min-distance` option
     corresponds to the `distance_min` argument, and represents a filter that
     selects close approaches whose nominal approach distance is at least that
@@ -107,6 +107,7 @@ def create_filters(date=None, start_date=None, end_date=None,
     :return: A collection of filters for use with `query`.
     """
     # TODO: Decide how you will represent your filters.
+    
     return ()
 
 
