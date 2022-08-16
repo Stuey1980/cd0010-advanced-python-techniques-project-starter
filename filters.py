@@ -106,7 +106,36 @@ def create_filters(date=None, start_date=None, end_date=None,
     :param hazardous: Whether the NEO of a matching `CloseApproach` is potentially hazardous.
     :return: A collection of filters for use with `query`.
     """
-    # TODO: Decide how you will represent your filters.
+    # Decide how you will represent your filters.
+    if date is not None:
+
+
+    if start_date is not None:
+
+
+    if end_date is not None:
+
+
+    if distance_min is not None:
+
+
+    if distance_max is not None:
+
+
+    if velocity_min is not None:
+
+
+    if velocity_max is not None:
+
+
+    if diameter_min is not None:
+
+
+    if diameter_max is not None:
+
+
+    if hazardous is not None:
+
 
     return ()
 

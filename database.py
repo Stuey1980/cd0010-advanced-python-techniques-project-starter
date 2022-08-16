@@ -52,7 +52,7 @@ class NEODatabase:
             # iterate through each close approach
             for approach in self._approaches:
                 # If the neo designation matches the designation of the approach
-                if neo.designation == approach.designation:
+                if self.database[neo.designation] == approach.designation:
                     # Append the approach to the list of neo approaches
                     neo.approaches.append(approach)
                     # Set the approach neo to neo
