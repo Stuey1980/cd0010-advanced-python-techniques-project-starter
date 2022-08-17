@@ -63,7 +63,7 @@ class NearEarthObject:
 
         # Set hazardous or not
         if info["pha"]:
-            self.hazardous = bool(info["pha"])
+            self.hazardous = info["pha"] == "Y"
         else:
             self.hazardous = False
 
