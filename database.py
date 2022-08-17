@@ -46,11 +46,11 @@ class NEODatabase:
         self.database = {}
         # Link together the NEOs and their close approaches.
         # Iterate through each neo
-        for neo in self._neos:
+        for neo in neos:
             # Create dictionary of neos using designation as key and neo as value
             self.database[neo.designation] = neo
             # iterate through each close approach
-            for approach in self._approaches:
+            for approach in approaches:
                 # If the neo designation matches the designation of the approach
                 if self.database[neo.designation] == approach.designation:
                     # Append the approach to the list of neo approaches
