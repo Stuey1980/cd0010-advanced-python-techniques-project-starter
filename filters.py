@@ -107,37 +107,36 @@ def create_filters(date=None, start_date=None, end_date=None,
     :return: A collection of filters for use with `query`.
     """
     # Decide how you will represent your filters.
-    if date is not None:
+    number_date = None
+    number_start_date = None
+    number_end_date = None
+    number_distance_min = None
+    number_distance_max = None
+    number_velocity_min = None
+    number_velocity_max = None
+    number_diameter_min = None
+    number_diameter_max = None
 
-
-    if start_date is not None:
-
-
-    if end_date is not None:
-
-
-    if distance_min is not None:
-
-
-    if distance_max is not None:
-
-
-    if velocity_min is not None:
-
-
-    if velocity_max is not None:
-
-
-    if diameter_min is not None:
-
-
-    if diameter_max is not None:
-
-
-    if hazardous is not None:
-
-
-    return ()
+    if date:
+        number_date = int(date.strip("_"))
+    if start_date:
+        number_start_date = int(start_date.strip("_"))
+    if end_date:
+        number_end_date = int(end_date.strip("_"))
+    if distance_min:
+        number_distance_min = int(distance_min)
+    if distance_max:
+        number_distance_max = int(distance_max)
+    if velocity_min:
+        number_velocity_min = int(velocity_min)
+    if velocity_max:
+        number_velocity_max = int(velocity_max)
+    if diameter_min:
+        number_diameter_min = int(diameter_min)
+    if diameter_max:
+        number_diameter_max = int(diameter_max)
+    return (number_date, number_start_date, number_end_date, number_distance_min, number_distance_max,
+            number_velocity_min, number_velocity_max, number_diameter_min, number_diameter_max, hazardous)
 
 
 def limit(iterator, n=None):
