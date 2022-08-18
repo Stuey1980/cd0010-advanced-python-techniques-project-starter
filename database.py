@@ -49,7 +49,7 @@ class NEODatabase:
         # Iterate through each neo
         for neo in neos:
             # Create dictionary of neos using designation as key and neo as value
-            self.neos_name[neo.designation] = neo
+            self.neos_designation[neo.designation] = neo
             if neo.name:
                 self.neos_name[neo.name] = neo
 
