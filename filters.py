@@ -118,11 +118,11 @@ def create_filters(date=None, start_date=None, end_date=None,
     number_diameter_max = None
 
     if date:
-        number_date = int(date.strip("_"))
+        number_date = int(date.strip("-"))
     if start_date:
-        number_start_date = int(start_date.strip("_"))
+        number_start_date = int(start_date.strip("-"))
     if end_date:
-        number_end_date = int(end_date.strip("_"))
+        number_end_date = int(end_date.strip("-"))
     if distance_min:
         number_distance_min = int(distance_min)
     if distance_max:
