@@ -93,7 +93,7 @@ class VelocityFilter(AttributeFilter):
 class DiameterFilter(AttributeFilter):
     @classmethod
     def get(cls, approach):
-        return approach.diameter
+        return approach.neo.diameter
 
 
 class HazardFilter(AttributeFilter):
@@ -138,6 +138,7 @@ def create_filters(date=None, start_date=None, end_date=None,
     """
     # Decide how you will represent your filters.
     filters = []
+
     if date:
         date_filter = DateFilter(operator.eq, date)
         filters.append(date_filter)
@@ -165,7 +166,7 @@ def create_filters(date=None, start_date=None, end_date=None,
     if diameter_max:
         max_diameter_filter = DiameterFilter(operator.le, diameter_max)
         filters.append(max_diameter_filter)
-    if hazardous:
+    if hazardous is not None:
         hazardous_filter = HazardFilter(operator.eq, hazardous)
         filters.append(hazardous_filter)
 
