@@ -72,6 +72,36 @@ class AttributeFilter:
         return f"{self.__class__.__name__}(op=operator.{self.op.__name__}, value={self.value})"
 
 
+class DateFilter(AttributeFilter):
+    @classmethod
+    def get(cls, approach):
+        return approach.time.date()
+
+
+class DistanceFilter(AttributeFilter):
+    @classmethod
+    def get(cls, approach):
+        return approach.distance
+
+
+class VelocityFilter(AttributeFilter):
+    @classmethod
+    def get(cls, approach):
+        return approach.velocity
+
+
+class DiameterFilter(AttributeFilter):
+    @classmethod
+    def get(cls, approach):
+        return approach.diameter
+
+
+class HazardFilter(AttributeFilter):
+    @classmethod
+    def get(cls, approach):
+        return approach.neo.hazardous
+
+
 def create_filters(date=None, start_date=None, end_date=None,
                    distance_min=None, distance_max=None,
                    velocity_min=None, velocity_max=None,
@@ -107,36 +137,39 @@ def create_filters(date=None, start_date=None, end_date=None,
     :return: A collection of filters for use with `query`.
     """
     # Decide how you will represent your filters.
-    number_date = None
-    number_start_date = None
-    number_end_date = None
-    number_distance_min = None
-    number_distance_max = None
-    number_velocity_min = None
-    number_velocity_max = None
-    number_diameter_min = None
-    number_diameter_max = None
-
+    filters = []
     if date:
-        number_date = int(date.strip("-"))
+        date_filter = DateFilter(operator.eq, date)
+        filters.append(date_filter)
     if start_date:
-        number_start_date = int(start_date.strip("-"))
+        start_date_filter = DateFilter(operator.ge, start_date)
+        filters.append(start_date_filter)
     if end_date:
-        number_end_date = int(end_date.strip("-"))
+        end_date_filter = DateFilter(operator.le, end_date)
+        filters.append(end_date_filter)
     if distance_min:
-        number_distance_min = int(distance_min)
+        min_distance_filter = DistanceFilter(operator.ge, distance_min)
+        filters.append(min_distance_filter)
     if distance_max:
-        number_distance_max = int(distance_max)
+        max_distance_filter = DistanceFilter(operator.le, distance_max)
+        filters.append(max_distance_filter)
     if velocity_min:
-        number_velocity_min = int(velocity_min)
+        min_velocity_filter = VelocityFilter(operator.ge, velocity_min)
+        filters.append(min_velocity_filter)
     if velocity_max:
-        number_velocity_max = int(velocity_max)
+        max_velocity_filter = VelocityFilter(operator.le, velocity_max)
+        filters.append(max_velocity_filter)
     if diameter_min:
-        number_diameter_min = int(diameter_min)
+        min_diameter_filter = DiameterFilter(operator.ge, diameter_min)
+        filters.append(min_diameter_filter)
     if diameter_max:
-        number_diameter_max = int(diameter_max)
-    return (number_date, number_start_date, number_end_date, number_distance_min, number_distance_max,
-            number_velocity_min, number_velocity_max, number_diameter_min, number_diameter_max, hazardous)
+        max_diameter_filter = DiameterFilter(operator.le, diameter_max)
+        filters.append(max_diameter_filter)
+    if hazardous:
+        hazardous_filter = HazardFilter(operator.eq, hazardous)
+        filters.append(hazardous_filter)
+
+    return filters
 
 
 def limit(iterator, n=None):
