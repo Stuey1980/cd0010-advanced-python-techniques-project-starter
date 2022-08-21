@@ -101,7 +101,7 @@ class NearEarthObject:
         f"and {haz} potentially hazardous"
 
     def __repr__(self):
-        """Return `repr(self)`, a computer-readable string representation"""
+        """Return `repr(self)`, a computer-readable string representation."""
         return (f"NearEarthObject(designation={self.designation!r},"
                 f"name={self.name!r}, "
                 f"diameter={self.diameter:.3f}, hazardous={self.hazardous!r})")
@@ -145,8 +145,7 @@ class CloseApproach:
 
     @property
     def time_str(self):
-        """Return a formatted representation of this `CloseApproach`'s
-        approach time.
+        """Return formatted repr of CloseApproach approach time.
 
         The value in `self.time` should be a Python `datetime` object.
         While a `datetime` object has a string representation, the
@@ -174,8 +173,7 @@ class CloseApproach:
                 f"au and a velocity of {self.velocity:.2f}km/s")
 
     def __repr__(self):
-        """Return `repr(self)`, a computer-readable string representation of
-        this object."""
+        """Return a computer-readable string repr of this object."""
         return (f"CloseApproach(time={self.time_str!r}, "
                 f"distance={self.distance:.2f}, "
                 f"velocity={self.velocity:.2f}, neo={self.designation!r})")
