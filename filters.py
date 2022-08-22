@@ -122,11 +122,13 @@ class HazardFilter(AttributeFilter):
         return approach.neo.hazardous
 
 
-def create_filters(date=None, start_date=None, end_date=None,
-                   distance_min=None, distance_max=None,
-                   velocity_min=None, velocity_max=None,
-                   diameter_min=None, diameter_max=None,
-                   hazardous=None):
+def create_filters(
+        date=None, start_date=None, end_date=None,
+        distance_min=None, distance_max=None,
+        velocity_min=None, velocity_max=None,
+        diameter_min=None, diameter_max=None,
+        hazardous=None
+):
     """Create a collection of filters from user-specified criteria.
 
     Each of these arguments is provided by the main module with a value
