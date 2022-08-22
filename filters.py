@@ -167,7 +167,6 @@ def create_filters(date=None, start_date=None, end_date=None,
     potentially hazardous.
     :return: A collection of filters for use with `query`.
     """
-
     # Decide how you will represent your filters.
     filters = []
 
@@ -214,7 +213,6 @@ def limit(iterator, n=None):
     :param n: The maximum number of values to produce.
     :yield: The first (at most) `n` values from the iterator.
     """
-
     # Produce at most `n` values from the given iterator.
 
     if n == 0 or n is None:
